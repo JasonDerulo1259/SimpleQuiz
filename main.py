@@ -7,6 +7,7 @@ import art
 import datetime
 import time
 import random
+import regex
 import os
 import sys
 from art import *
@@ -14,6 +15,11 @@ from replit import db
 from datetime import datetime
 now = datetime.now()
 current_time = now.strftime("%H")
+#REally large function below. Just ignore. Login def
+def loginprocess():
+  print("Not possible atm")
+
+#Ignore^^
 #really large variable below
 #Ignore this:
 multiquest=("Who was the first Queen of England?"," Who won the Best Actor Oscar in 2020?"," How many counties are there in the UK?"," a) 48 b) 58, c) 68 Which American band had a 1997 UK number one single with Dont Speak?"," Which US actor plays the title character in the movie franchise Deadpool?"," What is the common name for the home of a badger?"," Joseph Smith Jr. founded which religious movement?"," What is the first name of the presenter of Beadles About!, an ITV practical jokes programme which ran from 1986 to 1996?"," What is commonly known as the national fruit of India?"," The City Ground is been the home of which English football club?"," Who did Queen Elizabeth II surpass as Britains longest serving monarch in September 2015?"," Which word game invented by Allan Turoff features a grid of lettered dices?"," Which is the eighth and furthest-known planet from the sun in the solar system?"," Which mammal has the largest brain by weight, a human or a sperm whale?"," Which club does former Chelsea boss Jose Mourinho manage now?"," Coco, Cars and Inside Out are all films produced by which US animated film company?"," What was the busiest London Underground station last year?"," Sandie Shaw won which European music event in 1967 with Puppet on a String?"," In which century did Charlotte Brontë write Jane Eyre?"," S. O. S. is a common example of which electrical telegraph communication system?"," Which Conservative MP became Leader of the House in July 2019?"," The Chronicles of Narnia is a childrens book series written by which author?"," Which first name is shared by Cricketer Flintoff and Tennis player Murray?"," Who was the second US president?"," Who presented the original Through The Keyhole?"," What is the name of the paper company where the UK version of The Office is based?"," What was the name of Guns N Roses famous debut album?"," The Merry Hill Shopping Centre is in which Midland town?"," Which famous British figure died on 24 January 1965?"," How much of the human body is water?"," Where would you find the Sea of Tranquility?"," Who is the missing member of the original Queen band?"," Freddie Mercury, Brian May, _____ _____ and John Deacon. Which King of England was crowned on Christmas Day?"," What is Vic Reeves real name?"," What is the only mammal that cannot jump?"," What is Englands largest county with no coastline?"," What is the Queens surname?"," How many pounds are in a stone?"," Which woman is mentioned most in The Bible?"," What is the capital of Turkey?"," Z and which other letter are worth the most in Scrabble?")
@@ -37,45 +43,6 @@ def quickfire():
     time.sleep(0.2)
     againagainagain-=1
 
-def loginprocess():
-  os.system("clear")
-  time.sleep(1)
-  logagain="n"
-  print("(Not Completed Yet.) Sign in/Sign Up:")
-  time.sleep(1) 
-  print("To Login, Type 1. To Sign Up, Type 2. To Skip, Type 3")
-  lss=input("")
-  time.sleep(1)
-  if lss=="1":
-    print("Login Selected.")
-    time.sleep(1)
-    print("Enter password Below. (If you do not have an account, type /b to go back")
-    password=input("password: ")
-    if password!="/b":
-      print("PLACEHOLDER> INPUT CODE TO SEARCH/CONFIRM/LOGIN PASSWORD HERE")
-    else:
-      loginprocess()
-  if lss=="2":
-    print("Sign Up Selected.")
-    time.sleep(1)
-    print("Create password below. (Create hard to guess one. Anyone with it can login)")
-    print("If you want to go back or have a login, type /b")
-    password=input("password: ")
-    if password!="/b":
-      print("PLACEHOLDER> INPUT CODE TO CREATE PASSWORD HERE")
-      time.sleep(2)
-      print("(Pretend) Logged in!")
-    else:
-      loginprocess()
-  if lss=="3":
-    print("Skip Selected. Are you sure you want to skip?")
-    lssagain=input("y/n: ")
-    if lssagain=="y":
-      print("Now skipping login...")
-      time.sleep(2)
-    else:
-      loginprocess()
-  time.sleep(2)
 #Functions/Definitions Above ^^^
 logagain="n"
 goagain="y"
@@ -89,13 +56,20 @@ incorrect=("Nope.","Sorry mate, That's wrong","That's wrong","Incorrect mate.","
 randcorrect=random.choice(correct)
 randincorrect=random.choice(incorrect)
 #Variables/Randoms Above ^^^
-loginprocess()
+dolog=input("Do you want to do the login process or skip.\n(Answer y/n) : ")
+if dolog=="y":
+  print("Loading Login. Dont put in any personal emails/passwords as this is WIP and probably unsafe.")
+  time.sleep(2)
+  print("Succesfully Loaded!")
+  time.sleep(2)
+  os.system("clear")
+  loginprocess()
+else:
+  print("Continuing With Quiz...")
+  time.sleep(1)
 time.sleep(1)
 os.system("clear")
 while goagain=="y":
-  os.system("clear")
-  print("\033[1;32;40mHello!")
-  time.sleep(1)
   print("Welcome To the quiz! Are you ready?")
   time.sleep(2)
   print("\033[1;33;40m3")
@@ -196,7 +170,7 @@ while goagain=="y":
     time.sleep(2)
     print("\033[1;37;40mYour current score is",score,"and your streak is",streak)
   time.sleep(2)
-  print("\033[1;32;40mOkfrom replit import dbay, I think that's enough of that now.")
+  print("\033[1;32;40mOk, I think that's enough of that now.")
   time.sleep(1)
   print("how about some different ones.")
   time.sleep(2)
